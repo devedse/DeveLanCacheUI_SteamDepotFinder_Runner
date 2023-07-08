@@ -18,7 +18,7 @@ jobs:
       with:
         token: ${{secrets.github_token}}
 
-  build_linux:
+  generate_and_publish_new_appdepotmapping:
     needs: generate_version_number
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +27,6 @@ jobs:
         export VERSION=1.0.${{needs.generate_version_number.outputs.build_number}}
         echo Version: $VERSION
         docker run --rm -v output:/app -e STEAMTOKEN=${{ secrets.STEAMTOKEN }} devedse/develancacheui_steamdepotfinderconsoleapp
-        STEAMTOKEN: ${{ secrets.STEAMTOKEN }}
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
