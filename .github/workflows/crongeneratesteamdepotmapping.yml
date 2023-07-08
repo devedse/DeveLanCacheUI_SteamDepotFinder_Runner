@@ -1,4 +1,4 @@
-name: GitHubActionsBuilds
+name: crongeneratesteamdepotmapping
 
 on:
   schedule:
