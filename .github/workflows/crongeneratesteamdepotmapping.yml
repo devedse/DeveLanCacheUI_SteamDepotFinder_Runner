@@ -40,5 +40,7 @@ jobs:
       with:
         tag_name: 1.0.${{needs.generate_version_number.outputs.build_number}}
         files: |
+          ./output/app-depot-output-cleaned.csv
           ./output/app-depot-output-cleaned.csv.gz
+          ./output/steam-applist.json
           ./output/steam-applist.json.gz
