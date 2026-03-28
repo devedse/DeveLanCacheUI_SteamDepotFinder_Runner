@@ -36,7 +36,7 @@ jobs:
         gzip -9 -c ${{ github.workspace }}/output/app-depot-output-cleaned.csv > ${{ github.workspace }}/output/app-depot-output-cleaned.csv.gz
         gzip -9 -c ${{ github.workspace }}/output/steam-applist.json > ${{ github.workspace }}/output/steam-applist.json.gz
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: 1.0.${{needs.generate_version_number.outputs.build_number}}
         files: |
